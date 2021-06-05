@@ -1,3 +1,24 @@
-div {
-    border: 25px solid black;
-}
+/*----------  Btn ------------- */
+nav button {
+    padding: 0.5rem 1.5rem;
+    background-color: #5879c7;
+    border: none;
+    margin-left: 1.3rem;
+    cursor: pointer;
+    font-family: "raleway";
+  }
+  /*----------  Search bar ------------- */
+  nav input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.418);
+    padding-bottom: 0.5rem;
+    color: white;
+  }
+  input:focus {
+    outline: none;
+  }
+  ::placeholder {
+    color: rgba(255, 255, 255, 0.555);
+    font-family: "raleway";
+  }
