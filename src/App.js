@@ -8,7 +8,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+<<<<<<< HEAD
       name: "Abdulrhman Soukarieh"
+=======
+      name: "Omar Chouman - Abdulrhman Soukarieh"
+>>>>>>> 27ad9087b2fa98af0423dd416d3ca32f3043144b
     };
   }
 
