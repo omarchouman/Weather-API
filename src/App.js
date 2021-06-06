@@ -2,15 +2,16 @@ import React, { Component } from "react";
 import Search from './components/Search';
 import WeatherItem from './components/WeatherItem';
 import HoursWeather from './components/HoursWeather';
-import fakeWeatherData from "./fakeWeatherData.json";
+import FakeWeather from "./fakeWeatherData.json";
 
 import "./App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
+    let weather = FakeWeather.list.slice(0, 8);
     this.state = {
-      name: "Omar Chouman - Abdulrhman Soukarieh"
+      weather
     };
   }
 
@@ -23,7 +24,7 @@ class App extends Component {
       <div className="app">
         <Search />
 
-        <WeatherItem temp1="12" temp2="13" humidity="78" pressure="1000.8"/>
+        <WeatherItem weather={this.state.weather}/>
         
         <HoursWeather />
       </div>
