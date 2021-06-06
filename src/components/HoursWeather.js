@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import './WeatherItem.css';
 
 class HoursWeather extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: ""
+    };
+  }
     render() {
         return (
         <div>

@@ -23,7 +23,7 @@ class App extends Component {
       <div className="app">
         <Search />
 
-        <WeatherItem />
+        <WeatherItem temp1="12" temp2="13" humidity="78" pressure="1000.8"/>
         
         <HoursWeather />
       </div>
