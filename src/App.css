@@ -19,7 +19,7 @@ html {
   padding: 1% 1.5%;
 }
 /*----------  Btn ------------- */
-nav button {
+form button {
   padding: 0.5rem 1.5rem;
   background-color: #5879c7;
   border: none;
@@ -28,7 +28,7 @@ nav button {
   font-family: "raleway";
 }
 /*----------  Search bar ------------- */
-nav input {
+form input {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.418);

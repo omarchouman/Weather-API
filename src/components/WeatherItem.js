@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import './WeatherItem.css';
 import FakeWeather from '../fakeWeatherData.json';
-
+import storm from "../img/weather-icons/storm.svg"
 export default class WeatherItem extends Component {
   constructor(props) {
     super(props);
@@ -15,9 +15,10 @@ export default class WeatherItem extends Component {
       <div>
        <main>
          <div className="app__main">
-           <img src="http://placekitten.com/g/200/300"></img>
-           <h2>Temperature {Math.floor(FakeWeather.list[0].main.temp - 273.15)}<span>&#176;</span> to {Math.floor(FakeWeather.list[1].main.temp - 273.15)}<span>&#8451;</span></h2>
-           <p><span style={{fontWeight:"bold" , marginRight:"1rem"}}>Humidity</span> {FakeWeather.list[0].main.humidity}%  <span style = {{fontWeight:"bold" , margin:"0 1rem"}}>Pressure</span> {FakeWeather.list[0].main.pressure}</p>
+           <img style={{width:"300px"}}src={storm}></img>
+           <h2>{this.props.tempertureMin}<span>&#176;</span> to {this.props.tempertureMax}<span>&#8451;</span></h2>
+           <p><span style={{fontWeight:"bold" , marginRight:"1rem"}}>Humidity</span> {this.props.humid}%  <span style = {{fontWeight:"bold" , margin:"0 1rem"}}>Pressure</span> 
+           {this.props.pressure}</p>
          </div>
         </main>
       </div>

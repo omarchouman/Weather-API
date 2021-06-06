@@ -13,10 +13,10 @@ class Search extends React.Component {
         {/* ---------Header-------------- */} 
        
        <header className="app_header">
-         <nav>
-           <input type="text"  placeholder="Type in a city name"></input>
-           <button type="submit">FIND WEATHER</button>
-         </nav>
+         <form onSubmit = {this.props.getweather}  >
+           <input type="text" name="city" placeholder="Type in a city name"></input>
+           <button type="submit" >FIND WEATHER</button>
+         </form>
        </header>
 
       </div>
