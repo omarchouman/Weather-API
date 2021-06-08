@@ -14,7 +14,7 @@ class Search extends React.Component {
        
        <header className="app_header">
          <form onSubmit = {this.props.getweather}  >
-           <input type="text" name="city" placeholder="Type in a city name"></input>
+           <input type="text" name="city" placeholder="Type in a city name" required></input>
            <button type="submit" >FIND WEATHER</button>
          </form>
        </header>

@@ -10,52 +10,13 @@ class HoursWeather extends Component {
   }
     render() {
         return (
-        <div>
-          <ul className="wea-ther">
-            
-            <li>
-              <div className="res-grid"><h3>{this.props.timeOne}</h3>
-                 <img src="http://placekitten.com/50/50"></img>
-                 <h3>{this.props.tempOne}<span>&#8451;</span></h3></div>
-             </li>
-
-            <li>
-              <div className="res-grid"><h3>21:00</h3>
-                 <img src="http://placekitten.com/50/50"></img>
-                 <h3>12<span>&#8451;</span></h3></div>
-            </li>
-
-            <li>
-              <div className="res-grid"><h3>21:00</h3>
-                 <img src="http://placekitten.com/50/50"></img>
-                 <h3>12<span>&#8451;</span></h3></div>
-            </li>
-
-            <li>
-              <div className="res-grid"><h3>21:00</h3>
-                 <img src="http://placekitten.com/50/50"></img>
-                 <h3>12<span>&#8451;</span></h3></div>
-            </li>
-
-            <li>
-              <div className="res-grid"><h3>21:00</h3>
-                 <img src="http://placekitten.com/50/50"></img>
-                 <h3>12<span>&#8451;</span></h3></div>
-            </li>
-
-            <li>
-              <div className="res-grid"><h3>21:00</h3>
-                 <img src="http://placekitten.com/50/50"></img>
-                 <h3>12<span>&#8451;</span></h3></div>
-            </li>
-
-            <li>
-              <div className="res-grid"><h3>21:00</h3>
-                 <img src="http://placekitten.com/50/50"></img>
-                 <h3>12<span>&#8451;</span></h3></div>
-            </li>
-           
-          </ul>
+        <div className="wea-ther">
+             {this.props.temptime.map(lsit =>   <li>
+              <div className="res-grid"><h3>{new Date(lsit.dt_txt).getHours().toString() + ":00"}</h3>
+                 <img src={this.props.getIcon(lsit.weather[0].id)}></img>
+                 <h3>{lsit.main.temp}<span>&#8451;</span></h3></div>
+             </li> 
+             )}
         </div>
         )
     }
