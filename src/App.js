@@ -10,18 +10,16 @@ const API_KEY = "af7e64abd76a500ee810c8f98bbd15cf";
 class App extends Component {
   constructor(props) {
     super(props);
-    let weather = FakeWeather.list.slice(0, 8);
     this.state = {
-      weather,
-      tempertureMin: undefined,
-      tempertureMax: undefined,
-      city: undefined,
-      humid: undefined,
-      pressure:undefined,
-      timeOne: undefined,
-      timeTow: undefined,
-      tempOne:undefined,
-      tempTow:undefined
+      tempertureMin: null,
+      tempertureMax: null,
+      city: null,
+      humid: null,
+      pressure: null,
+      timeOne: null,
+      timeTow: null,
+      tempOne: null,
+      tempTow: null
     };
   }
   getWeather = async (e) => {
@@ -31,8 +29,8 @@ class App extends Component {
   const data = await api_call.json();
   console.log(data);
   this.setState({
-    tempertureMin : Math.floor( data.list[0].main.temp),
-    tempertureMax : Math.floor( data.list[7].main.temp),
+    tempertureMin : Math.floor( data.list[7].main.temp),
+    tempertureMax : Math.floor( data.list[0].main.temp),
     humid : Math.floor(data.list[0].main.humidity),
     pressure : Math.floor(data.list[0].main.pressure),
     timeOne :data.list[1].dt_txt,
@@ -41,13 +39,15 @@ class App extends Component {
   })
   }
   
+  // We will need to add a function getIcon Here
 
   render() {
     return (
       <div className="app">
         <Search getweather = {this.getWeather} />
 
-        <WeatherItem weather={this.state.weather}
+        <WeatherItem 
+          weather={this.state.weather}
           tempertureMin={this.state.tempertureMin}
           tempertureMax={this.state.tempertureMax}
           humid = {this.state.humid} 
