@@ -13,15 +13,14 @@ class App extends Component {
     let weather = FakeWeather.list.slice(0, 8);
     this.state = {
       weather,
-      tempertureMin: undefined,
-      tempertureMax: undefined,
-      city: undefined,
-      humid: undefined,
-      pressure:undefined,
-      timeOne: undefined,
-      timeTow: undefined,
-      tempOne:undefined,
-      tempTow:undefined
+      tempertureMin: null,
+      tempertureMax: null,
+      city: null,
+      humid: null,
+      pressure: null,
+    
+      temptime:[]
+       
     };
   }
   getWeather = async (e) => {
@@ -31,12 +30,12 @@ class App extends Component {
   const data = await api_call.json();
   console.log(data);
   this.setState({
-    tempertureMin : Math.floor( data.list[0].main.temp),
-    tempertureMax : Math.floor( data.list[7].main.temp),
+    tempertureMin : Math.floor( data.list[7].main.temp),
+    tempertureMax : Math.floor( data.list[0].main.temp),
     humid : Math.floor(data.list[0].main.humidity),
     pressure : Math.floor(data.list[0].main.pressure),
-    timeOne :data.list[1].dt_txt,
-    tempOne : Math.floor(data.list[1].main.temp)
+  
+    temptime : data.list
 
   })
   }
@@ -55,16 +54,8 @@ class App extends Component {
        
         
         <HoursWeather
-          tempOne = {this.state.tempOne}
-         
-          tempTow = {this.state.tempTow}
-          tempThree = {this.state.tempThree}
-          tempFour = {this.state.tempFour}
-          tempFive = {this.state.tempFive}
-          tempSix = {this.state.tempSix }
-          tempSeven = {this.state.tempSeven} 
-          timeOne = {this.state.timeOne}
-          timeTow = {this.state.timeTow}/>
+          temptime = {this.state.temptime}
+        />
       </div>
     );
   }
